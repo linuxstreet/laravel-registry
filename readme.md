@@ -111,5 +111,5 @@ Please see the [license file](license.md) for more information.
 [link-packagist]: https://packagist.org/packages/linuxstreet/registry
 [link-downloads]: https://packagist.org/packages/linuxstreet/registry
 [link-travis]: https://travis-ci.org/linuxstreet/registry
-[link-styleci]: https://styleci.io/repos/152642206
+[link-styleci]: https://styleci.io/repos/152642206/shield
 [link-author]: https://github.com/linuxstreet
