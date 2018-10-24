@@ -108,8 +108,8 @@ Please see the [license file](license.md) for more information.
 [ico-travis]: https://img.shields.io/travis/linuxstreet/registry/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
 
-[link-packagist]: https://packagist.org/packages/linuxstreet/registry
-[link-downloads]: https://packagist.org/packages/linuxstreet/registry
+[link-packagist]: https://packagist.org/packages/linuxstreet/laravel-registry
+[link-downloads]: https://packagist.org/packages/linuxstreet/laravel-registry
 [link-travis]: https://travis-ci.org/linuxstreet/registry
 [link-styleci]: https://styleci.io/repos/152642206/shield
 [link-author]: https://github.com/linuxstreet
