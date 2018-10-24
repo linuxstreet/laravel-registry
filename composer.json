@@ -1,6 +1,6 @@
 {
     "name": "linuxstreet/laravel-registry",
-    "description": ":description",
+    "description": "Registry package provides a convenient way to manage and use simple key/value pairs (with pre-defined types) by using Laravel's under-laying config() functionality.",
     "license": "MIT",
     "authors": [
         {
