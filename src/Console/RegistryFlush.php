@@ -3,13 +3,11 @@
 namespace Linuxstreet\Registry\Console;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Artisan;
 use Linuxstreet\Registry\Registry;
+use Illuminate\Support\Facades\Artisan;
 
 /**
- * Class RegistryFlush
- *
- * @package Linuxstreet\Registry
+ * Class RegistryFlush.
  */
 class RegistryFlush extends Command
 {

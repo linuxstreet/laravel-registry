@@ -5,9 +5,8 @@ namespace Linuxstreet\Registry;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * Class ValidateRegistry
+ * Class ValidateRegistry.
  *
- * @package Linuxstreet\Registry
  * @property int id
  * @property string comment
  * @property mixed value

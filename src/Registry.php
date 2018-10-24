@@ -2,15 +2,14 @@
 
 namespace Linuxstreet\Registry;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Registry
+ * Class Registry.
  *
- * @package Linuxstreet\Registry
  * @property int id
  * @property string key
  * @property mixed value
@@ -41,7 +40,7 @@ class Registry extends Model
     ];
 
     /**
-     * Key to save values to within the registry
+     * Key to save values to within the registry.
      */
     private const STORE_KEY = 'store';
 
@@ -54,7 +53,7 @@ class Registry extends Model
     private static $configKey = 'registry';
 
     /**
-     * Save settings to config
+     * Save settings to config.
      *
      * @return void
      */
@@ -83,7 +82,7 @@ class Registry extends Model
     }
 
     /**
-     * Get value from the registry by a given key
+     * Get value from the registry by a given key.
      *
      * @param string $key
      * @param mixed $default
@@ -98,7 +97,7 @@ class Registry extends Model
                 Log::info("Registry key: '{$key}' is used but not defined in the registry.");
             }
 
-            return null;
+            return;
         }
 
         return Config::get($key, $default);
@@ -113,11 +112,11 @@ class Registry extends Model
      */
     public static function configKey($key = null)
     {
-        return $key === null ? (self::$configKey . '.' . self::STORE_KEY) : (self::$configKey . ".{$key}");
+        return $key === null ? (self::$configKey.'.'.self::STORE_KEY) : (self::$configKey.".{$key}");
     }
 
     /**
-     * Cast registry value to its defined type
+     * Cast registry value to its defined type.
      *
      * @param $value
      * @param $type
@@ -133,7 +132,7 @@ class Registry extends Model
                 $value = collect(explode(',', $value))->toArray();
                 break;
             case 'numeric':
-                $value = (float)$value;
+                $value = (float) $value;
                 break;
             case 'json':
                 $value = json_decode($value);
@@ -144,7 +143,7 @@ class Registry extends Model
     }
 
     /**
-     * Get string representation from the registry config key
+     * Get string representation from the registry config key.
      *
      * @return string
      */
