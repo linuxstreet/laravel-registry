@@ -1,9 +1,10 @@
 # Registry for Laravel
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Total Downloads][ico-downloads]][link-downloads]
-[![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
+
+[![Latest Stable Version](https://poser.pugx.org/linuxstreet/laravel-registry/v/stable)](https://packagist.org/packages/linuxstreet/laravel-registry)
+[![License](https://poser.pugx.org/linuxstreet/laravel-registry/license)](https://packagist.org/packages/linuxstreet/laravel-registry)
+[![Total Downloads](https://poser.pugx.org/linuxstreet/laravel-registry/downloads)](https://packagist.org/packages/linuxstreet/laravel-registry)
+[![StyleCI](https://github.styleci.io/repos/152642206/shield?branch=master)](https://github.styleci.io/repos/152642206)
 
 
 Registry package provides a convenient way to manage and use simple key/value pairs (with pre-defined types) by using Laravel's under-laying config() functionality.
@@ -103,13 +104,7 @@ If you discover any security related issues, please email author email instead o
 
 Please see the [license file](license.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/linuxstreet/registry.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/linuxstreet/registry.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/linuxstreet/registry/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
-
 [link-packagist]: https://packagist.org/packages/linuxstreet/laravel-registry
 [link-downloads]: https://packagist.org/packages/linuxstreet/laravel-registry
 [link-travis]: https://travis-ci.org/linuxstreet/registry
-[link-styleci]: https://styleci.io/repos/152642206/shield
 [link-author]: https://github.com/linuxstreet
