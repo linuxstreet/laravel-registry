@@ -5,9 +5,7 @@ namespace Linuxstreet\Registry\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class Registry
- *
- * @package Linuxstreet\Registry\Facades
+ * Class Registry.
  */
 class Registry extends Facade
 {
