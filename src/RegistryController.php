@@ -5,11 +5,8 @@ namespace Linuxstreet\Registry;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Artisan;
 
-
 /**
- * Class RegistryController
- *
- * @package Linuxstreet\Registry
+ * Class RegistryController.
  */
 class RegistryController extends Controller
 {
@@ -48,7 +45,7 @@ class RegistryController extends Controller
     }
 
     /**
-     * Show resource
+     * Show resource.
      *
      * @param Registry $registry
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -73,7 +70,6 @@ class RegistryController extends Controller
                 'type',
                 'comment'
             ]));
-
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(__('registry::all.error_store'));
         }

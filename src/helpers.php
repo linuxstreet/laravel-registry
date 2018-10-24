@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Get value from registry for a given key
+ * Get value from registry for a given key.
  *
  * @param string $key
  * @param mixed $default

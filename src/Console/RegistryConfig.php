@@ -6,9 +6,7 @@ use Illuminate\Console\Command;
 use Linuxstreet\Registry\Registry;
 
 /**
- * Class RegistryConfig
- *
- * @package Linuxstreet\Registry
+ * Class RegistryConfig.
  */
 class RegistryConfig extends Command
 {
