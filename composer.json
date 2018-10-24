@@ -1,7 +1,7 @@
 {
     "name": "linuxstreet/laravel-registry",
     "description": ":description",
-    "license": "license",
+    "license": "MIT",
     "authors": [
         {
             "name": "Igor Jovanovic",
