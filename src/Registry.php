@@ -2,11 +2,11 @@
 
 namespace Linuxstreet\Registry;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Registry.
@@ -106,7 +106,7 @@ class Registry extends Model
                 Log::info("Registry key: '{$key}' is used but not defined in the registry.");
             }
 
-            return null;
+            return;
         }
 
         return Config::get($key, $default);
@@ -121,7 +121,7 @@ class Registry extends Model
      */
     public static function configKey($key = null)
     {
-        return $key === null ? (self::$configKey . '.' . self::STORE_KEY) : (self::$configKey . ".{$key}");
+        return $key === null ? (self::$configKey.'.'.self::STORE_KEY) : (self::$configKey.".{$key}");
     }
 
     /**
@@ -141,7 +141,7 @@ class Registry extends Model
                 $value = collect(explode(',', $value))->toArray();
                 break;
             case 'numeric':
-                $value = (float)$value;
+                $value = (float) $value;
                 break;
             case 'json':
                 $value = json_decode($value);
