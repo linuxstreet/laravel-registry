@@ -15,9 +15,13 @@ The main difference is that keys/values are saved in database and there is no ne
  
 Take a look at [contributing.md](contributing.md) to see a to do list.
 
-## Installation
 
-Via Composer
+## Installation
+> **Requires:**
+- **[PHP 7.0+](https://php.net/releases/)**
+- **[Laravel 5.5+](https://github.com/laravel/laravel)**
+
+Via Composer:
 
 ``` bash
 $ composer require linuxstreet/laravel-registry
@@ -27,7 +31,7 @@ Migrate your database:
 $ php artisan migrate
 ```
 
-If you're using Laravel < 5.5 you'll need to add the service provider to your config/app.php
+If you're using Laravel 5.5 you'll need to add the service provider to your config/app.php
 
 ``` bash
 'Linuxstreet\Registry\RegistryServiceProvider::class'
@@ -39,30 +43,38 @@ $ php artisan vendor:publish --provider="Linuxstreet\Registry\RegistryServicePro
 ```
 
 ## Usage
-Check the config file and make necessary changes if needed.
+Check the 'config/registry.php' config file and make necessary changes if needed.
 
 You can add/edit registry entries by using web provided web forms. 
 
-By default use: http://your-website/admin/registry/
+Start your web server:
+```bash
+$ php artisan serve
+```
 
+Go to:
+[http://127.0.0.1:8000/admin/registry](http://127.0.0.1:8000/admin/registry)
 
-#### Console helpers:
-List registry key/values as stored in database:
+Note: You can customize admin path by changing 'route_prefix' option in 'config/registry.php'
+
+> **Console helpers**
+
+* List registry key/values as stored in database:
 ```bash
 $ php artisan registry:list
 ```
 
-List registry config keys with their real php values:
+* List registry config keys with their real php values:
 ```bash
 $ php artisan registry:config
 ```
 
-Flush all registry items (will permanently delete registry entries from database):
+* Flush all registry items (will permanently delete registry entries from database):
 ```bash
 $ php artisan registry:flush
 ```
 
-#### Using registry items in your code:
+> **Using registry items in your code**
 
 You can access registry entries by using provided registry() helper:
 ```php 
@@ -103,8 +115,3 @@ If you discover any security related issues, please email author email instead o
 ## License
 
 Please see the [license file](license.md) for more information.
-
-[link-packagist]: https://packagist.org/packages/linuxstreet/laravel-registry
-[link-downloads]: https://packagist.org/packages/linuxstreet/laravel-registry
-[link-travis]: https://travis-ci.org/linuxstreet/registry
-[link-author]: https://github.com/linuxstreet
