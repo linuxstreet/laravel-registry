@@ -55,7 +55,7 @@ $ php artisan serve
 Go to:
 [http://127.0.0.1:8000/admin/registry](http://127.0.0.1:8000/admin/registry)
 
-Note: You can customize admin path by changing 'route_prefix' option in 'config/registry.php'
+Note: You can customize admin path by changing 'route_prefix' and/or 'path' options in 'config/registry.php'
 
 > **Console helpers**
 
