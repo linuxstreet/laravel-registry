@@ -3,6 +3,7 @@ preset: laravel
 disabled:
 - trailing_comma_in_multiline_array
 - length_ordered_imports
+- concat_without_spaces
 
 finder:
   exclude:
