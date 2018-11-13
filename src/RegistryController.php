@@ -101,7 +101,7 @@ class RegistryController extends Controller
             'key',
             'value',
             'type',
-            'comments'
+            'comment'
         ];
 
         try {

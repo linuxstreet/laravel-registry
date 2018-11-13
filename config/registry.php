@@ -5,6 +5,16 @@ return [
 
         /*
          |--------------------------------------------------------------------------
+         | Path
+         |--------------------------------------------------------------------------
+         |
+         | Route resource path.
+         |
+         */
+        'path' => 'registry',
+
+        /*
+         |--------------------------------------------------------------------------
          | Config Key
          |--------------------------------------------------------------------------
          |
@@ -31,12 +41,15 @@ return [
          | Route Middleware
          |--------------------------------------------------------------------------
          |
-         | Route middleware to be applied on the web route when accessing registry
-         | admin panel. Please note that 'web' and 'bindings' will be applied
-         | by default.
+         | These middleware will be assigned to every Registry route, giving you
+         | the chance to add your own middleware to this list or change any of
+         | the existing middleware.
          |
          */
-        'route_middleware' => [],
+        'middleware' => [
+            'web',
+            'bindings'
+        ],
 
         /*
          |--------------------------------------------------------------------------
