@@ -19,12 +19,12 @@ class RegistryServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'registry');
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'registry');
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'registry');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'registry');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         // Load helpers
-        require_once __DIR__ . '/helpers.php';
+        require_once __DIR__.'/helpers.php';
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
@@ -41,7 +41,7 @@ class RegistryServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/registry.php', 'registry');
+        $this->mergeConfigFrom(__DIR__.'/../config/registry.php', 'registry');
 
         // Register the service the package provides.
         $this->app->singleton('registry', function ($app) {
@@ -49,7 +49,7 @@ class RegistryServiceProvider extends ServiceProvider
         });
 
         // Load registry admin routes
-        $this->loadRoutesFrom(__DIR__ . '/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
     }
 
     /**
@@ -71,12 +71,12 @@ class RegistryServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__ . '/../config/registry.php' => config_path('registry.php'),
+            __DIR__.'/../config/registry.php' => config_path('registry.php'),
         ], 'registry.config');
 
         // Publishing the views.
         $this->publishes([
-            __DIR__ . '/../resources/views' => base_path('resources/views/vendor/linuxstreet'),
+            __DIR__.'/../resources/views' => base_path('resources/views/vendor/linuxstreet'),
         ], 'registry.views');
 
         // Registering package commands.
