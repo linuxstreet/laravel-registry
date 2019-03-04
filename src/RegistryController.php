@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Artisan;
 
 /**
- * Class RegistryController
- *
- * @package Linuxstreet\Registry
+ * Class RegistryController.
  */
 class RegistryController extends Controller
 {

@@ -96,8 +96,6 @@ class Registry extends Model
         if (config('registry.settings.log_missing_keys')) {
             Log::info("Registry key: '{$key}' is used but not defined in the registry.");
         }
-
-        return null;
     }
 
     /**
@@ -140,7 +138,7 @@ class Registry extends Model
     }
 
     /**
-     * Set the key value pairs in registry
+     * Set the key value pairs in registry.
      *
      * @param string $key
      * @param mixed $value
