@@ -18,5 +18,6 @@ return [
     'edit' => 'Edit',
     'update' => 'Update',
     'result' => 'Result',
-    'show_item' => 'Show'
+    'show_item' => 'Show',
+    'array_hint' => 'For array type please use comma separated values.'
 ];

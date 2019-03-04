@@ -30,10 +30,10 @@
 
 <div class="form-group">
     <label for="value" class="col-md-4 control-label">@lang('registry::all.value')</label>
-
     <div class="col-md-6">
         <input type="text" value="{{ $registry->value ?? old('value') }}" name="value" id="value" autocomplete="off" required
                class="form-control">
+        <small class="text-muted">@lang('registry::all.array_hint')</small>
     </div>
 </div>
 
