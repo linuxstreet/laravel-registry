@@ -2,11 +2,11 @@
 
 namespace Linuxstreet\Registry;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Registry.
@@ -74,20 +74,8 @@ class Registry extends Model
 
         foreach (self::all() as $item) {
             $value = self::castToType($item->value, $item->type);
-            self::set($item->key, $value);
+            Config::set(self::configKey($item->key), $value);
         }
-    }
-
-    /**
-     * Set the key/value pairs in config as a registry key.
-     *
-     * @param string $key
-     * @param mixed $value
-     * @return void
-     */
-    public static function set($key, $value): void
-    {
-        Config::set(self::configKey($key), $value);
     }
 
     /**
@@ -101,15 +89,15 @@ class Registry extends Model
     {
         $key = self::configKey($key);
 
-        if (! Config::has($key)) {
-            if (config('registry.settings.log_missing_keys')) {
-                Log::info("Registry key: '{$key}' is used but not defined in the registry.");
-            }
-
-            return;
+        if (Config::has($key)) {
+            return Config::get($key, $default);
         }
 
-        return Config::get($key, $default);
+        if (config('registry.settings.log_missing_keys')) {
+            Log::info("Registry key: '{$key}' is used but not defined in the registry.");
+        }
+
+        return null;
     }
 
     /**
@@ -119,9 +107,9 @@ class Registry extends Model
      * @param string $key
      * @return string
      */
-    public static function configKey($key = null)
+    public static function configKey($key = null): string
     {
-        return $key === null ? (self::$configKey.'.'.self::STORE_KEY) : (self::$configKey.".{$key}");
+        return $key === null ? (self::$configKey . '.' . self::STORE_KEY) : (self::$configKey . ".{$key}");
     }
 
     /**
@@ -135,10 +123,10 @@ class Registry extends Model
     {
         switch ($type) {
             case 'boolean':
-                $value = filter_var($value, FILTER_VALIDATE_BOOLEAN);
+                $value = (bool) $value;
                 break;
             case 'array':
-                $value = collect(explode(',', $value))->toArray();
+                $value = str_getcsv($value);
                 break;
             case 'numeric':
                 $value = (float) $value;
@@ -149,6 +137,18 @@ class Registry extends Model
         }
 
         return $value;
+    }
+
+    /**
+     * Set the key value pairs in registry
+     *
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     */
+    public static function set($key, $value): void
+    {
+        Config::set(self::configKey($key), $value);
     }
 
     /**

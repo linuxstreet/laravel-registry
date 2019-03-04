@@ -34,13 +34,15 @@ class ValidateRegistry extends FormRequest
     {
         $table = app(Registry::class)->getTable();
 
+        $type = ($this->type === 'array') ? 'string' : $this->type;
+
         return [
             'key' => [
                 'required',
                 'max:64',
                 ($this->method() === 'POST') ? "unique:$table,key" : "unique:$table,key,{$this->id},id"
             ],
-            'value' => 'required',
+            'value' => "required|{$type}",
             'type' => 'required|max:16'
         ];
     }

@@ -2,7 +2,7 @@
 
 @section('heading')
     <div class="d-flex justify-content-between">
-        <span class="h1">{{ $registry->key }}</span>
+        <span class="h1">@lang('registry::all.key'): {{ $registry->key }}</span>
     </div>
 @endsection
 
@@ -30,8 +30,8 @@
                     <code>Registry::get('{{ $registry->key }}');</code>
                 </p>
                 <p>
-                    <code>config('{{ config('registry.settings.config_key', 'registry') . '.' . $registry->key }}
-                        ');</code>
+                    <code>config('{{ config('registry.settings.config_key', 'registry') . '.'
+                     . $registry->key }}');</code>
                 </p>
             </td>
         </tr>
