@@ -6,14 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Artisan;
 
 /**
- * Class RegistryController
- *
- * @package Linuxstreet\Registry
+ * Class RegistryController.
  */
 class RegistryController extends Controller
 {
     /**
-     * Placeholder for registry types
+     * Placeholder for registry types.
      * @var array
      */
     private $registryTypes;
