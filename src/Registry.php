@@ -21,16 +21,19 @@ use Illuminate\Support\Facades\Schema;
 class Registry extends Model
 {
     /**
+     * Registry table name in the database
      * @var string
      */
     protected $table = 'registry';
 
     /**
+     * Allowed types for registry values
      * @var array
      */
     public static $types = ['numeric', 'string', 'array', 'boolean', 'json'];
 
     /**
+     * Fillable form fields
      * @var array
      */
     protected $fillable = [
@@ -54,7 +57,9 @@ class Registry extends Model
     private static $configKey = 'registry';
 
     /**
-     * Save settings to config.
+     * Save settings to Laravel's config facility.
+     * Save each item as a config key value pair
+     * and make sure that the type is casted
      *
      * @return void
      */
@@ -96,6 +101,8 @@ class Registry extends Model
         if (config('registry.settings.log_missing_keys')) {
             Log::info("Registry key: '{$key}' is used but not defined in the registry.");
         }
+
+        return null;
     }
 
     /**
@@ -150,7 +157,7 @@ class Registry extends Model
     }
 
     /**
-     * Get string representation from the registry config key.
+     * Get string representation of the value for the given key
      *
      * @return string
      */

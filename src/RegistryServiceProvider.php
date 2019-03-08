@@ -53,7 +53,8 @@ class RegistryServiceProvider extends ServiceProvider
     }
 
     /**
-     * Get the services provided by the provider.
+     * Get the services provided by the
+     * registry service provider.
      *
      * @return array
      */
